@@ -1,7 +1,12 @@
 *{ margin: 0px}
 
+:root{
+    --principal: bisque;
+    --secundaria: #F0EAD1; 
+}
+
 .container{
-    background-color:gainsboro;
+    background-color:var(--secundaria);
 }
 
 .header{ 
@@ -17,24 +22,27 @@
 }
 
 .foto{
-    border-radius: 150px;
-    margin-top: 35px;
+    border-radius: 200px;
+    margin-top: 30px;
 }
 
 .titulo{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 45px;
-    color: midnightblue;
+    color: #675E22;
+    font-size: 40px;
     font-family: 'Pacifico', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .cargo{  
-    display: center;
+    display: flex;
     align-items: center;
     justify-content: center;
-    color: midnightblue;
+    color: #675E22;
+    font-size: 20px;
     font-family: 'Pacifico', cursive;
     font-family: 'Playfair Display', serif;
     font-family: 'Roboto Condensed', sans-serif;
@@ -46,7 +54,7 @@ img{
 
 .menu ul{
     height: 50px;
-    background-color: midnightblue;
+    background-color: #B09A3B;
     padding:0px;
     margin: 0px;
     list-style: none;
@@ -64,7 +72,7 @@ img{
     padding: 5px 10px;
     display: inline-block;
 
-    background-color: midnightblue;
+    background-color: #B09A3B;
     color: white;
     text-decoration: none;
     border-bottom: 3px solid white;
@@ -72,35 +80,74 @@ img{
 }
 
 .menu ul li a:hover{
-       color:midnightblue;
+       color:#B09A3B;
        background-color:white ;
        border-bottom: 3px solid white;
 }
 
+h3{
+    margin-top: 20px;
+    max-width: 600px;
+    color: #675E22;
+    font-size: 30px;
+    text-align: flex;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h4{
+    margin-top: 15px;
+    color: #675E22;
+    max-width: 175px;
+    border-bottom: 3px double #675E22;
+    font-size: 16px;
+    text-align: flex;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h5{
+    margin-top: 15px;
+    color: #675E22;
+    max-width: 125px;
+    border-bottom: 3px double #675E22;
+    font-size: 16px;
+    text-align: flex;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+
 .main{
-    background-color: gainsboro;
-    height: 500px;
+    background-color:#F0EAD1;
+    height: 450px;
     display: block;
     position: relative;
-    max-width: 600px;
+    max-width: 1000px;
     margin: auto;
 }
 
 .main p{    
     margin-top: 20px;
-    max-width: 600px;
-    text-align: center;
+    max-width: 800px;
+    color: #675E22;
+    text-align: flex;
     font-family: 'Pacifico', cursive;
     font-family: 'Playfair Display', serif;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
 .footer{
-    background-color:gray;
+    background-color:#D4BB7D;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #675E22;
     font-size: 12px;
     font-family: 'Pacifico', cursive;
     font-family: 'Playfair Display', serif;
