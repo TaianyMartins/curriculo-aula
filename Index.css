@@ -2,18 +2,22 @@
 
 :root{
     --principal: bisque;
-    --secundaria: #F0EAD1; 
+    --secundaria: rgb(241, 207, 180);
 }
 
 .container{
     background-color:var(--secundaria);
 }
 
-.header{ 
-      height: 250px;
-      text-align: left;
-      margin: 25px;
-      display: inline-flex;
+.header{   
+    height: 200px;
+    width: 100%;
+    text-align: left;
+    background-color: rgb(58, 56, 69);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .textos{
@@ -22,15 +26,16 @@
 }
 
 .foto{
+    width: 150px;
     border-radius: 200px;
-    margin-top: 30px;
+    margin-top: 7px;
 }
 
 .titulo{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #675E22;
+    color:rgb(202, 164, 135);
     font-size: 40px;
     font-family: 'Pacifico', cursive;
     font-family: 'Playfair Display', serif;
@@ -41,20 +46,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #675E22;
+    color: rgb(202, 164, 135);
     font-size: 20px;
     font-family: 'Pacifico', cursive;
     font-family: 'Playfair Display', serif;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-img{
-    border-radius: 20%;
-}
-
 .menu ul{
     height: 50px;
-    background-color: #B09A3B;
+    background-color:rgb(198, 155, 123);
     padding:0px;
     margin: 0px;
     list-style: none;
@@ -68,27 +69,26 @@ img{
 }
 
 .menu ul li a{
-
-    padding: 5px 10px;
+    padding: 5px 20px;
     display: inline-block;
 
-    background-color: #B09A3B;
-    color: white;
+    background-color:rgb(198, 155, 123);
+    color: rgb(58, 56, 69);
     text-decoration: none;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid rgb(58, 56, 69);
     font-size: 20px;
 }
 
 .menu ul li a:hover{
-       color:#B09A3B;
-       background-color:white ;
-       border-bottom: 3px solid white;
+       color:rgb(58, 56, 69);
+       background-color:rgb(255, 251, 233);
+       border-bottom: 3px solid rgb(255, 251, 233);
 }
 
 h3{
-    margin-top: 20px;
+    margin-top: 40px;
     max-width: 600px;
-    color: #675E22;
+    color: rgb(30, 29, 34);
     font-size: 30px;
     text-align: flex;
     font-family: 'Pacifico', cursive;
@@ -98,9 +98,9 @@ h3{
 
 h4{
     margin-top: 15px;
-    color: #675E22;
+    color: rgb(30, 29, 34);
     max-width: 175px;
-    border-bottom: 3px double #675E22;
+    border-bottom: 3px double rgb(30, 29, 34);
     font-size: 16px;
     text-align: flex;
     font-family: 'Pacifico', cursive;
@@ -110,9 +110,9 @@ h4{
 
 h5{
     margin-top: 15px;
-    color: #675E22;
+    color: rgb(30, 29, 34);
     max-width: 125px;
-    border-bottom: 3px double #675E22;
+    border-bottom: 3px double rgb(30, 29, 34);
     font-size: 16px;
     text-align: flex;
     font-family: 'Pacifico', cursive;
@@ -120,21 +120,19 @@ h5{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-
-
 .main{
-    background-color:#F0EAD1;
-    height: 450px;
+    background-color:rgb(241, 207, 180);
+    height: 550px;
     display: block;
     position: relative;
-    max-width: 1000px;
+    max-width: 600px;
     margin: auto;
 }
 
 .main p{    
     margin-top: 20px;
-    max-width: 800px;
-    color: #675E22;
+    max-width: 600px;
+    color: rgb(30, 29, 34);
     text-align: flex;
     font-family: 'Pacifico', cursive;
     font-family: 'Playfair Display', serif;
@@ -142,12 +140,12 @@ h5{
 }
 
 .footer{
-    background-color:#D4BB7D;
+    background-color:rgb(130, 111, 102);
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #675E22;
+    color: rgb(72, 52, 52);
     font-size: 12px;
     font-family: 'Pacifico', cursive;
     font-family: 'Playfair Display', serif;
