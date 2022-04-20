@@ -1,8 +1,17 @@
-*{ margin: 0px}
+*{ 
+    margin: 0px
+}
 
 :root{
     --principal: bisque;
-    --secundaria: rgb(241, 207, 180);
+    --secundaria: rgb(247, 221, 199);
+}
+
+body{
+    background-color: var(--secundaria);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .container{
@@ -20,15 +29,15 @@
     justify-content: center;
 }
 
-.textos{
-    display: block;
-    margin: 60px;
-}
-
 .foto{
     width: 150px;
     border-radius: 200px;
     margin-top: 7px;
+}
+
+.textos{
+    display: block;
+    margin: 60px;
 }
 
 .titulo{
@@ -121,17 +130,17 @@ h5{
 }
 
 .main{
-    background-color:rgb(241, 207, 180);
-    height: 550px;
+    background-color:rgb(247, 221, 199);
     display: block;
-    position: relative;
-    max-width: 600px;
+    max-width: 650px;
+    min-height: 500px;
     margin: auto;
+    flex: 1;
 }
 
 .main p{    
     margin-top: 20px;
-    max-width: 600px;
+    max-width: 800px;
     color: rgb(30, 29, 34);
     text-align: flex;
     font-family: 'Pacifico', cursive;
@@ -140,11 +149,12 @@ h5{
 }
 
 .footer{
-    background-color:rgb(130, 111, 102);
     height: 50px;
+    background-color:rgb(130, 111, 102);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     color: rgb(72, 52, 52);
     font-size: 12px;
     font-family: 'Pacifico', cursive;

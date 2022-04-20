@@ -21,7 +21,22 @@ function gerarNumerosAleatorios(quantidade, min, max){
 }
 
 function gerarCartelaBingo(){
-let area_cartela = document.getElementById("cartela");
+
+    numeroCartelas = numeroCartelas + 1;
+
+    let dono = prompt("Digite o nome do dono da cartela");
+    let h3dono = document.createElement("h3");
+    h3dono.innerText = dono;
+
+    let area_cartela = document.getElementById("cartela");
+
+    let divcartela = document.createElement("div");
+    divcartela.appendChild(h3dono);
+
+    divcartela.style.textAlign ="center";
+    divcartela.style.fontSize ="24px";
+
+
 let cartela = document.createElement("table");
 let cabecalho_cartela = document.createElement("thead");
 let corpo_cartela = document.createElement("tbody");
@@ -56,7 +71,6 @@ cartelaBingo.push(gerarNumerosAleatorios(5,61,75));
 
 console.log(cartelaBingo);
 
-
 for (let i = 0; i < 5; i++){
     let linha_dados = document.createElement("tr");
     for (let j = 0; j < 5; j++){
@@ -68,6 +82,120 @@ for (let i = 0; i < 5; i++){
 }
 
 cartela.appendChild(corpo_cartela);
-area_cartela.appendChild(cartela);
+divcartela.appendChild(cartela);
 
+area_cartela.appendChild(divcartela);
+}
+
+var jogoEstaAcontecendo = false;
+var numeroCartelas = 0;
+
+function deletarCartelas(){
+
+    if(jogoEstaAcontecendo){
+        alert("Você não pode limpar as cartelas enquanto o jogo está acontecendo!");
+        return;     
+    }
+
+    if(numeroCartelas == 0){
+        alert("Não existe cartela para limpar!");
+        return; 
+    }
+
+    numeroCartelas = 0;
+    
+    let divCartela = document.getElementById("cartela");
+    let divSorteado = document.getElementById("sorteados");
+    let cartelas = divCartela.getElementsByTagName("table");
+    let h3donos = divCartela.getElementsByTagName("h3");
+    let spans = divSorteado.getElementsByTagName("span");
+
+    
+   while(cartelas[0]){
+       cartelas[0].parentNode.removeChild(cartelas[0]);
+   }
+   while(h3donos[0]){
+    h3donos[0].parentNode.removeChild(h3donos[0]);
+   }
+   while(spans[0]){
+    spans[0].parentNode.removeChild(spans[0]);
+    
+    }
+
+}
+
+var intervalo
+
+function sorteio(){
+
+    let cartelas = document.getElementsByTagName("table");
+
+    if(cartelas.length===0){
+        alert("Você precisa criar uma cartela antes!");
+        return;
+    }
+    
+    let divsorteados = document.getElementById("sorteados");
+
+    let numerosSorteados = []
+
+    intervalo = setInterval(function(){
+        jogoEstaAcontecendo = true;
+        let aleatorio = 0;
+        do{
+            aleatorio = Math.ceil(Math.random()*75);
+        } while (numerosSorteados.indexOf(aleatorio) !== -1)
+                    
+            numerosSorteados.push(aleatorio);
+            let numero = document.createElement("span");
+            numero.innerText = aleatorio;
+            divsorteados.appendChild(numero);
+            //Conferir as cartelas
+            for(let i =0; i <cartelas.length; i++){
+                let numerosCartela = cartelas[i].getElementsByTagName("td");
+                for(let j = 0; j <numerosCartela.length; j++){
+                    if(numerosCartela[j].innerText==aleatorio){
+                        numerosCartela[j].style.backgroundColor ="rgb(198, 155, 123)";
+                    }
+                }
+
+                if(verificarVencedor(numerosCartela, numerosSorteados)){
+                    alert("Parabéns! Você ganhou o bingo!");
+                    clearInterval(intervalo);
+                    jogoEstaAcontecendo = false;
+            }
+        }
+
+
+        if(numerosSorteados.length === 75) clearInterval(intervalo);
+    }, 200)
+
+}
+
+function pararJogo(){
+    if(jogoEstaAcontecendo){
+        clearInterval(intervalo);
+        jogoEstaAcontecendo = false;
+    }else{
+        alert("Não existe nenhum jogo acontecendo!")
+    }
+}
+
+function verificarVencedor(cartela, numerosSorteados){
+    if(numerosSorteados.length < 25) return;
+
+    cartela = [...cartela];
+
+    cartela.splice(0,5);
+
+    for (let i = 0; i < cartela.length; i ++){
+        console.log(numerosSorteados);
+        console.log(cartela[i].innerText)
+        if(numerosSorteados.indexOf(parseInt(cartela[i].innerText)) == -1){
+            return false;
+        }
+    }
+
+    return true;
+         
 }

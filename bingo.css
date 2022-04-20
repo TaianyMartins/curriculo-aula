@@ -32,7 +32,7 @@
 }
 
 #cabecalho button{
-    margin: 10px;
+    margin: 5px;
     background-color:rgb(58, 56, 69);
     width: 150px;
     height: 50px;
@@ -41,5 +41,25 @@
     font-family: 'Pacifico', cursive;
     font-family: 'Playfair Display', serif;
     font-family: 'Roboto Condensed', sans-serif;
+}
+
+#sorteados{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+#sorteados span{
+    color: rgb(255, 251, 233);
+    font-size: 30px;
+    background-color:rgb(58, 56, 69);
+    padding: 2px;
+    margin: 3px;
+    width: 40px;
+    text-align: center;
+    border: 1px solid rgb(255, 251, 233);
+    border-radius: 50%;
 }
     

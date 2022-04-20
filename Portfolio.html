@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="bingo.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital@0;1&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-    </head> 
-    
-    <body>
-    
-        <div class="container">
-            <div class="header">
-                <img class="foto"src="imagens/Taiany.png"alt="perfil">
-                <div class="textos">
-                    <h1 class="titulo">Taiany Martins Dos Santos</h1>
-                    <h2 class="cargo">Auxiliar Administrativo | Desenvolvimento Web</h2>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="bingo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital@0;1&family=Roboto+Condensed:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img class="foto" src="imagens/Taiany.png" alt="perfil">
+            <div class="textos">
+                <h1 class="titulo">Taiany Martins Dos Santos</h1>
+                <h2 class="cargo">Auxiliar Administrativo | Desenvolvimento Web</h2>
             </div>
-    
-            <div class="menu">
-    
+        </div>
+
+        <div class="menu">
+
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="portfolio.html">PORTFOLIO</a></li>
                 <li><a href="experiencia.html">EXPERIÊNCIA</a></li>
                 <li><a href="contato.html">CONTATO</a></li>
             </ul>
-    
+
         </div>
-    
+
         <div class="main">
-            <h3>Portfolio</h3>
-                <div id="cabecalho">   
-                    <button onclick="gerarCartelaBingo()">Gerar Cartela de Bingo</button>
-                    <button>Iniciar Jogo</button>     
-                    <button>Limpar Cartelas</button>                           
+            <div id="cabecalho">
+                <button onclick="gerarCartelaBingo()">Gerar Cartela de Bingo</button>
+                <button onclick="sorteio()">Iniciar Jogo</button>
+                <button onclick="pararJogo()">Parar Jogo</button>
+                <button onclick="deletarCartelas()">Limpar Cartelas</button>
+
+            </div>
+            <div id="sorteados">
+
             </div>
             <div id="cartela">
             </div>
         </div>
-    
 
-            <div class="footer">
-              <p> Todos os direitos reservados.</p>
-            </div>
+
+        <div class="footer">
+            <p> Todos os direitos reservados.</p>
         </div>
+    </div>
 
-            <script src="bingo.js"></script> 
-    
-    </body>
-    
-    </html>
+    <script src="bingo.js"></script>
+
+</body>
+
+</html>
