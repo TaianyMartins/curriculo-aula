@@ -30,11 +30,11 @@ function gerarCartelaBingo(){
 
     let area_cartela = document.getElementById("cartela");
 
-    let divcartela = document.createElement("div");
-    divcartela.appendChild(h3dono);
+    let divCartela = document.createElement("div");
+    divCartela.appendChild(h3dono);
 
-    divcartela.style.textAlign ="center";
-    divcartela.style.fontSize ="24px";
+    divCartela.style.textAlign ="center";
+    divCartela.style.fontSize ="24px";
 
 
 let cartela = document.createElement("table");
@@ -82,9 +82,9 @@ for (let i = 0; i < 5; i++){
 }
 
 cartela.appendChild(corpo_cartela);
-divcartela.appendChild(cartela);
+divCartela.appendChild(cartela);
 
-area_cartela.appendChild(divcartela);
+area_cartela.appendChild(divCartela);
 }
 
 var jogoEstaAcontecendo = false;
@@ -128,7 +128,8 @@ var intervalo
 
 function sorteio(){
 
-    let cartelas = document.getElementsByTagName("table");
+    let divCartela = document.getElementById("cartela");
+    let cartelas = divCartela.getElementsByTagName("div");
 
     if(cartelas.length===0){
         alert("Você precisa criar uma cartela antes!");
@@ -151,7 +152,8 @@ function sorteio(){
             numero.innerText = aleatorio;
             divsorteados.appendChild(numero);
             //Conferir as cartelas
-            for(let i =0; i <cartelas.length; i++){
+            for(let i = 0; i <cartelas.length; i++){
+                let nomeJogador = cartelas[i].getElementsByTagName("h3")[0].innerText;
                 let numerosCartela = cartelas[i].getElementsByTagName("td");
                 for(let j = 0; j <numerosCartela.length; j++){
                     if(numerosCartela[j].innerText==aleatorio){
@@ -160,12 +162,11 @@ function sorteio(){
                 }
 
                 if(verificarVencedor(numerosCartela, numerosSorteados)){
-                    alert("Parabéns! Você ganhou o bingo!");
+                    alert(`Parabéns ${nomeJogador}! Você venceu o bingo!!`);
                     clearInterval(intervalo);
                     jogoEstaAcontecendo = false;
-            }
+                }
         }
-
 
         if(numerosSorteados.length === 75) clearInterval(intervalo);
     }, 200)
