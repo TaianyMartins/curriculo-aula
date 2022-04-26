@@ -25,6 +25,14 @@ function gerarCartelaBingo(){
     numeroCartelas = numeroCartelas + 1;
 
     let dono = prompt("Digite o nome do dono da cartela");
+
+    console.log(dono);
+
+    if(dono == null){
+        alert("Você precisa digitar um nome!");
+        return;
+    }
+
     let h3dono = document.createElement("h3");
     h3dono.innerText = dono;
 
